@@ -57,4 +57,7 @@ xor False False = False
 {-| The 'formatTriangle' formats and show given triangle.
  -}
 formatTriangle :: Int -> Triangle -> IO ()
-formatTriangle n = putStrLn . unlines . map (unwords . map show) . take n
+formatTriangle n = putStrLn . unlines . map (unwords . map showBool) . take n
+ where
+  showBool True = "1"
+  showBool False = "0"
