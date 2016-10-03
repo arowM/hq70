@@ -5,6 +5,7 @@ main = print $ search' 2014
 type Triangle = [Row]
 type Row = [Bool]
 
+-- |
 -- >>> search' 1
 -- 3
 -- >>> search' 2
@@ -29,11 +30,13 @@ search current n (r:rs)
 countFalses :: Row -> Int
 countFalses = length . filter not
 
+-- |
 -- >>> take 4 triangle
 -- [[True],[True,True],[True,False,True],[True,True,True,True]]
 triangle :: Triangle
 triangle = iterate nextRow [True]
 
+-- |
 -- >>> nextRow [True]
 -- [True,True]
 -- >>> nextRow $ nextRow [True]
